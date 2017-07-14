@@ -4,4 +4,9 @@ const path = require('path')
 const app = express()
 
 app.use(express.static(path.join(__dirname)))
+
+app.get('/health', (req, res) => {
+  res.send(true)
+})
+
 app.listen(process.env.PORT || 3000)
